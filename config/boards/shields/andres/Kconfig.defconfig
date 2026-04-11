@@ -1,0 +1,6 @@
+if SHIELD_ANDRES
+
+config ZMK_KEYBOARD_NAME
+    default "Andres Keyboard"
+
+endif
