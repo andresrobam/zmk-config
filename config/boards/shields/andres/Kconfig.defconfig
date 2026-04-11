@@ -1,6 +1,6 @@
 if SHIELD_ANDRES
 
-config ZMK_KEYBOARD_NAME
+config SHIELD_ANDRES
     default "Andres Keyboard"
 
 endif
