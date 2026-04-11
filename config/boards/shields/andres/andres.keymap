@@ -1,14 +1,43 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/outputs.h>
 
 / {
+    /* The transform defines the logical layout of your keys */
+    /* RC(row, column) - Left side is 0-5, Right side is 6-11 */
+    default_transform: keymap_transform_0 {
+        compatible = "zmk,matrix-transform";
+        columns = <12>;
+        rows = <4>;
+        map = <
+RC(0,0) RC(0,1) RC(0,2) RC(0,3) RC(0,4) RC(0,5)    RC(0,6) RC(0,7) RC(0,8) RC(0,9) RC(0,10) RC(0,11)
+RC(1,0) RC(1,1) RC(1,2) RC(1,3) RC(1,4) RC(1,5)    RC(1,6) RC(1,7) RC(1,8) RC(1,9) RC(1,10) RC(1,11)
+RC(2,0) RC(2,1) RC(2,2) RC(2,3) RC(2,4) RC(2,5)    RC(2,6) RC(2,7) RC(2,8) RC(2,9) RC(2,10) RC(2,11)
+                RC(3,2) RC(3,3) RC(3,4) RC(3,5)    RC(3,6) RC(3,7) RC(3,8) RC(3,9)
+        >;
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
         default_layer {
+            label = "Base";
             bindings = <
-                &kp A    &kp B
-                &kp C    &kp D
+&kp ESC   &kp Q &kp W &kp E &kp R &kp T    &kp Y &kp U &kp I     &kp O   &kp P    &kp BSPC
+&kp TAB   &kp A &kp S &kp D &kp F &kp G    &kp H &kp J &kp K     &kp L   &kp SEMI &kp SQT
+&kp LSHFT &kp Z &kp X &kp C &kp V &kp B    &kp N &kp M &kp COMMA &kp DOT &kp FSLH &kp RSHFT
+                &kp LCTRL &mo 1 &kp LALT &kp SPACE &kp ENTER &kp RALT &mo 1 &kp RCTRL
+            >;
+        };
+
+        function_layer {
+            label = "Tools";
+            bindings = <
+&kp F1     &kp F2 &kp F3 &kp F4 &kp F5 &kp F6    &kp F7   &kp F8   &kp F9 &kp F10 &kp F11 &kp F12
+&bt BT_CLR &none  &none  &none  &none  &none     &kp LEFT &kp DOWN &kp UP &kp RIGHT &none &none
+&bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &none &none &out OUT_TOG    &none &none &none &none &none &none
+                         &none  &trans &none     &none    &none    &none &trans &none
             >;
         };
     };

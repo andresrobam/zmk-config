@@ -1,13 +1,15 @@
-#include "andres.dtsi"
-
-&default_transform {
-    col-offset = <6>; // Tells the keymap these keys start after the 6 left columns
-};
-
-&kscan0 {
-    col-gpios
-        = <&pro_micro 10 GPIO_ACTIVE_HIGH>
-        , <&pro_micro 16 GPIO_ACTIVE_HIGH>
-        // Add your right-side pins here
-        ;
+/ {
+    kscan0: kscan {
+        compatible = "zmk,kscan-gpio-matrix";
+        diode-direction = "col2row";
+        row-gpios
+            = <&pro_micro 4 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&pro_micro 5 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            ;
+        col-gpios
+            = <&pro_micro 8 GPIO_ACTIVE_HIGH> // Physical Col 2 becomes Logical Col 0
+            , <&pro_micro 7 GPIO_ACTIVE_HIGH> // Physical Col 1
+            , <&pro_micro 6 GPIO_ACTIVE_HIGH> // Physical Col 0 becomes Logical Col 2
+            ;
+    };
 };
