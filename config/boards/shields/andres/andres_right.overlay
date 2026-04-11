@@ -1,0 +1,13 @@
+#include "andres.dtsi"
+
+&default_transform {
+    col-offset = <6>; // Tells the keymap these keys start after the 6 left columns
+};
+
+&kscan0 {
+    col-gpios
+        = <&pro_micro 10 GPIO_ACTIVE_HIGH>
+        , <&pro_micro 16 GPIO_ACTIVE_HIGH>
+        // Add your right-side pins here
+        ;
+};
