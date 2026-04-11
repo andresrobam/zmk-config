@@ -19,6 +19,6 @@
 #
 include:
   - board: nice_nano_v2
-    shield: andres_left
+    shield: andres
   - board: nice_nano_v2
     shield: settings_reset
