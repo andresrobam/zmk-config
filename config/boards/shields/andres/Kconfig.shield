@@ -1,6 +1,5 @@
 config SHIELD_ANDRES_LEFT
     def_bool $(shields_list_contains,andres_left)
-    select ZMK_SPLIT_ROLE_CENTRAL
 
 config SHIELD_ANDRES_RIGHT
     def_bool $(shields_list_contains,andres_right)
