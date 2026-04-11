@@ -2,39 +2,14 @@
 #include <dt-bindings/zmk/keys.h>
 
 / {
-  keymap {
-    compatible = "zmk,keymap";
-    default_layer {
-      display-name = "Base";
-      bindings = <
-        &kp TAB &kp ESC &kp MINUS &kp Z &kp A &kp Q &kp N1 &kp X &kp S &kp W &kp N2 &kp C
-        &kp D &kp E &kp N3 &kp V &kp F &kp R &kp N4 &kp B &kp G &kp T &kp N5 &none
-        &none &none &none &kp RCTRL &kp LSHFT &kp LALT &kp SPACE &mo 1 &mo 2
-      >;
+    keymap {
+        compatible = "zmk,keymap";
+
+        default_layer {
+            bindings = <
+                &kp A    &kp B
+                &kp C    &kp D
+            >;
+        };
     };
-    layer_1 {
-      display-name = "Arrows";
-      bindings = <
-        &none &none &none &none &none &none &none &none &none &none &none &none
-        &none &none &none &none &none &none &none &none &none &none &none &none
-        &none &none &none &none &none &none &none &none &none
-      >;
-    };
-    layer_2 {
-      display-name = "Nav";
-      bindings = <
-        &none &none &none &none &none &none &none &none &none &none &none &none
-        &none &none &none &none &none &none &none &none &none &none &none &none
-        &none &none &none &none &none &none &none &none &none
-      >;
-    };
-    layer_3 {
-      display-name = "F";
-      bindings = <
-        &none &none &none &none &none &none &kp F1 &none &none &none &kp F2 &none
-        &none &none &kp F3 &none &none &none &kp F4 &none &none &none &kp F5 &none
-        &none &none &none &none &none &none &none &none &none
-      >;
-    };
-  };
 };
