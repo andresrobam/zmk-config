@@ -4,7 +4,6 @@
 / {
   keymap {
     compatible = "zmk,keymap";
-    default_layer = <0>;
     default_layer {
       display-name = "Base";
       bindings = < &kp TAB &kp ESC &kp MINUS &kp Z &kp A &kp Q &kp N1 &kp X &kp S &kp W &kp N2 &kp C &kp D &kp E &kp N3 &kp V &kp F &kp R &kp N4 &kp B &kp G &kp T &kp N5 &none &none &none &none &kp RCTRL &kp LSHFT &kp LALT &kp SPACE &mo 1 &mo 2 &none &none &none &none &none &kp P &kp N0 &none &kp L &kp O &kp N9 &none &kp K &kp I &kp N8 &kp M &kp J &kp U &kp N7 &kp N &kp H &kp Y &kp N6 &none &none &none &none &none &none &none &none &mo 3 &kp BSPC >;

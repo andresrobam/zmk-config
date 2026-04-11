@@ -1,0 +1,16 @@
+if SHIELD_ANDRES_LEFT
+
+config ZMK_KEYBOARD_NAME
+    default "andres keeb"
+
+config ZMK_SPLIT_BLE_ROLE_CENTRAL
+    default y
+
+endif
+
+if SHIELD_ANDRES_LEFT || SHIELD_ANDRES_RIGHT
+
+config ZMK_SPLIT
+    default y
+
+endif
